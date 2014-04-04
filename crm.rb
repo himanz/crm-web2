@@ -1,9 +1,20 @@
-require_relative 'contact'
 require_relative 'rolodex'
 require 'sinatra'
 require 'data_mapper'
 
 DataMapper.setup(:default, "sqlite3:database.sqlite3")
+
+class Contact
+  
+  attr_accessor :first_name, :last_name, :email, :note, :id, :date
+	def initialize(first_name, last_name, email, note, date)
+		@first_name = first_name
+		@last_name = last_name
+		@email = email
+		@note = note
+		@date = date
+	end 
+end
 
 @@rolodex = Rolodex.new
 
