@@ -1,0 +1,13 @@
+<h1>Search a Contact</h1>
+<p>Select a Field</p>
+<div class="container">
+	<form action="/contacts/search_contact" method="post">
+		<input type="hidden" name="_method" value="put">
+	  First Name<input type="radio" name="choice" value="first_name"><br>
+	  Last Name<input type="radio" name="choice" value="last_name"><br>
+	  Email<input type="radio" name="choice" value="email"><br>
+	  Note<input type="radio" name="choice" value="note"><br>
+	  Search Word<input type="text" name="search"><br>
+	  <input type="submit" name="Submit">
+	</form>
+</div>

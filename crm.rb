@@ -32,15 +32,8 @@ get '/contacts/new' do
 	erb :new_contact
 end
 
-post '/contacts' do
-	Contact.create(
-		:first_name => params[:first_name],
-		:last_name => params[:last_name],
-		:email => params[:email],
-		:note => params[:note],
-		:date => params[:date]
-	)
-	redirect to('/contacts')
+get '/contacts/search_contact' do
+  erb :search_contact
 end
 
 get '/contacts/:id' do
@@ -59,6 +52,26 @@ get '/contacts/:id/edit' do
 	else
 		raise Sinatra::NotFound
 	end
+end
+
+post '/contacts' do
+	Contact.create(
+		:first_name => params[:first_name],
+		:last_name => params[:last_name],
+		:email => params[:email],
+		:note => params[:note],
+		:date => params[:date]
+	)
+	redirect to('/contacts')
+end
+
+put "contacts/search_contact" do
+	if params[:choice] == "first_name"
+	  @contact = Contact.all(:first_name => params[:search])
+	elsif params[:choice] == "last_name"
+	  @contact = Contact.all(:last_name => params[:search])
+	end
+	reirect to('/contacts/search_result')
 end
 
 put "/contacts/:id" do
@@ -84,3 +97,4 @@ delete "/contacts/:id" do
 		raise Sinatra::NotFound
 	end
 end
+

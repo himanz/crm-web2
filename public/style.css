@@ -43,8 +43,7 @@ body
     overflow: auto;
 }
 
-p
-{    
+p {    
     font-size: 1.3em;
 }
 
@@ -68,6 +67,8 @@ header
 .Content
 {
     background-color: #93B1C6;
+    background: url(/pier.jpg) no-repeat center center fixed;
+    background-size: cover;
 }
 footer
 {
