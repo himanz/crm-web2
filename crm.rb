@@ -32,7 +32,22 @@ get '/contacts/new' do
 	erb :new_contact
 end
 
-get '/contacts/search_contact' do
+put '/contacts' do
+	Contact.create(
+		:first_name => params[:first_name],
+		:last_name => params[:last_name],
+		:email => params[:email],
+		:note => params[:note],
+		:date => params[:date]
+	)
+	redirect to('/contacts')
+end
+
+get '/contacts/search' do
+	@contacts = []
+	if params[:last_name]
+		@contacts = Contact.all(last_name: params[:last_name])
+	end
   erb :search_contact
 end
 
@@ -54,25 +69,6 @@ get '/contacts/:id/edit' do
 	end
 end
 
-post '/contacts' do
-	Contact.create(
-		:first_name => params[:first_name],
-		:last_name => params[:last_name],
-		:email => params[:email],
-		:note => params[:note],
-		:date => params[:date]
-	)
-	redirect to('/contacts')
-end
-
-put "contacts/search_contact" do
-	if params[:choice] == "first_name"
-	  @contact = Contact.all(:first_name => params[:search])
-	elsif params[:choice] == "last_name"
-	  @contact = Contact.all(:last_name => params[:search])
-	end
-	reirect to('/contacts/search_result')
-end
 
 put "/contacts/:id" do
   @contact = Contact.get(params[:id].to_i)
