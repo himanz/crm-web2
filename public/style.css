@@ -1,0 +1,115 @@
+*
+{
+    margin: 0;
+    padding: 0;
+}
+html, body
+{
+    height: 100%;
+    text-align: center;
+}
+
+body
+{
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+}
+
+.Middle
+{    
+    -webkit-flex: 1 1 auto;
+    -ms-flex: 1 1 auto;
+    flex: 1 1 0;
+
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+
+    overflow: hidden;
+}
+
+.Content
+{   
+    -webkit-flex: 1 1 auto;
+    -ms-flex: 1 1 auto;
+    flex: 1 0 0;
+
+    overflow: auto;
+}
+
+/*For demonstration only*/
+p
+{    
+    font-size: 1.3em;
+}
+
+li {
+    color: white;
+}
+
+.Important
+{
+    font-weight: bolder;
+    color: white;
+}
+
+header
+{
+    background-color: #F5F5F5;
+    width: 100%;
+    height: 125px;
+}
+
+/*
+.LeftMenu
+{
+    background-color:  #bdbe4c;
+    
+    width: 15%;
+}
+*/
+
+.Content
+{
+    background-color: #93B1C6;
+}
+footer
+{
+    background-color:#342800;
+    width: 100%;
+    height: 100px;
+}
+
+.container {
+        width: 150px;
+        clear: both;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .container input {
+        width: 100%;
+        clear: both;
+    }
+
+.main_text {
+    list-style-type: none;
+    text-align: center;
+}
+
+.header_title {
+    margin-top: 30px;
+    font-size: 3rem;
+}
+
+.logo {
+    float: left;
+    height: 100%;
+    top: -85px;
+    position: relative;
+}
+

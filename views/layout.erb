@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= @crm_app_name %></title>
+    <link rel="stylesheet" type="text/css" href="/style.css">
+  </head>
+  
+ 
+  <body>
+  
+ 	  <header>
+      <h1 class="header_title">World of CRM</h1>
+      
+      <a id="logo" href="/">
+      <img class="logo" alt="html5" src="http://wp.streetwise.co/wp-content/uploads//2013/04/HTML5_Profile.jpg" /></a>
+     
+    </header>
+    <section class="Middle">
+<!--
+      <div class="LeftMenu">
+      </div>
+-->
+      <div class="Content">
+        <%= yield %>
+      </div>
+    </section>
+    <footer>
+      <p class="copyright">Copyright &copy; 2014 Jonathan Chang All Rights Reserved.</p>
+    </footer>
+  </body>
+ 
+</html>
